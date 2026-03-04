@@ -1,137 +1,163 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Happy Birthday 💖</title>
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Patrick Hand', cursive;
-            background: #fff0f5;
-            text-align: center;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<title>Happy Birthday 💖</title>
 
-        .container {
-            padding: 40px 20px;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 
-        h1 {
-            font-size: 48px;
-            color: #ff6f91;
-            transform: rotate(-3deg);
-        }
+<style>
+body{
+    margin:0;
+    font-family:'Patrick Hand', cursive;
+    background:#fff0f6;
+    text-align:center;
+    overflow-x:hidden;
+}
 
-        .polaroid {
-            background: white;
-            padding: 15px;
-            width: 260px;
-            margin: 20px auto;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transform: rotate(2deg);
-            border-radius: 10px;
-        }
+.container{
+    padding:40px 20px;
+}
 
-        .polaroid img {
-            width: 100%;
-            border-radius: 10px;
-        }
+h1{
+    font-size:50px;
+    color:#ff4d88;
+    transform:rotate(-2deg);
+}
 
-        .caption {
-            margin-top: 10px;
-            font-size: 20px;
-            color: #444;
-        }
+.subtitle{
+    font-family:'Quicksand', sans-serif;
+    font-size:20px;
+    color:#555;
+    margin-bottom:30px;
+}
 
-        .note {
-            background: #fffacd;
-            display: inline-block;
-            padding: 15px 20px;
-            margin-top: 30px;
-            border-radius: 10px;
-            font-size: 22px;
-            transform: rotate(-2deg);
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-        }
+/* Polaroid */
+.polaroid{
+    background:white;
+    padding:15px;
+    width:280px;
+    margin:20px auto;
+    box-shadow:0 15px 25px rgba(0,0,0,0.2);
+    border-radius:15px;
+    transform:rotate(2deg);
+    transition:0.3s;
+}
 
-        button {
-            margin-top: 30px;
-            padding: 10px 25px;
-            font-size: 18px;
-            border: none;
-            border-radius: 20px;
-            background: #ff6f91;
-            color: white;
-            cursor: pointer;
-        }
+.polaroid:hover{
+    transform:scale(1.05) rotate(0deg);
+}
 
-        .hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
+.polaroid img{
+    width:100%;
+    border-radius:10px;
+}
 
-        .heart {
-            position: absolute;
-            color: pink;
-            animation: fall 6s linear infinite;
-        }
+.caption{
+    margin-top:10px;
+    font-size:18px;
+    color:#444;
+}
 
-        @keyframes fall {
-            0% {transform: translateY(-100px);}
-            100% {transform: translateY(100vh);}
-        }
-    </style>
+/* Sticky note */
+.note{
+    background:#fff9b0;
+    display:inline-block;
+    padding:20px;
+    margin-top:30px;
+    border-radius:10px;
+    box-shadow:5px 5px 15px rgba(0,0,0,0.2);
+    transform:rotate(-2deg);
+    font-size:22px;
+    max-width:300px;
+}
+
+/* Button */
+button{
+    margin-top:30px;
+    padding:12px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d88;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff1a66;
+    transform:scale(1.1);
+}
+
+/* Hearts animation */
+.hearts{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+.heart{
+    position:absolute;
+    animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+    0%{transform:translateY(-100px);}
+    100%{transform:translateY(100vh);}
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
-    <h1>Happy Birthday Sayangku 🎀💖</h1>
 
-    <div class="polaroid">
-        <img src="foto.jpeg" alt="Foto Kita">
-        <div class="caption">My favorite person 🤍</div>
-    </div>
+<h1>Happy Birthday Sayangku 🎀💖</h1>
+<div class="subtitle">The most beautiful girl in my life ✨</div>
 
-    <div class="note">
-        Semoga panjang umur, sehat selalu,  
-        dan makin sayang sama aku yaaa 🥺💕  
-        Aku bersyukur banget punya kamu ✨
-    </div>
+<div class="polaroid">
+    <img src="foto.jpeg" alt="Foto Kita">
+    <div class="caption">My favorite person in the world 🤍</div>
+</div>
 
-    <br>
-    <button onclick="playMusic()">Putar Lagu 🎵</button>
+<div class="note">
+    Terima kasih sudah hadir di hidupku 🥺💕  
+    Semoga semua impianmu tercapai 🎂✨  
+    Aku akan selalu ada buat kamu 🤍  
+</div>
 
-    <audio id="music" loop>
-        <source src="lagu.mp3" type="audio/mpeg">
-    </audio>
+<br>
+<button onclick="playMusic()">Putar Lagu 🎵</button>
+
+<audio id="music" loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
 </div>
 
 <div class="hearts" id="hearts"></div>
 
 <script>
-function playMusic() {
+function playMusic(){
     document.getElementById("music").play();
 }
 
-function createHearts() {
-    const heart = document.createElement("div");
+function createHearts(){
+    const heart=document.createElement("div");
     heart.classList.add("heart");
-    heart.innerHTML = "💖";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*20+15+"px";
     document.getElementById("hearts").appendChild(heart);
 
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
+    setTimeout(()=>{heart.remove();},6000);
 }
 
-setInterval(createHearts, 500);
+setInterval(createHearts,500);
 </script>
 
 </body>
