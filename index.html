@@ -2,46 +2,137 @@
 <html>
 <head>
     <title>Happy Birthday 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            margin: 0;
+            padding: 0;
+            font-family: 'Patrick Hand', cursive;
+            background: #fff0f5;
             text-align: center;
-            font-family: Arial, sans-serif;
-            padding-top: 100px;
-            color: white;
+            overflow-x: hidden;
         }
+
+        .container {
+            padding: 40px 20px;
+        }
+
         h1 {
-            font-size: 50px;
+            font-size: 48px;
+            color: #ff6f91;
+            transform: rotate(-3deg);
         }
-        p {
+
+        .polaroid {
+            background: white;
+            padding: 15px;
+            width: 260px;
+            margin: 20px auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: rotate(2deg);
+            border-radius: 10px;
+        }
+
+        .polaroid img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .caption {
+            margin-top: 10px;
             font-size: 20px;
+            color: #444;
         }
+
+        .note {
+            background: #fffacd;
+            display: inline-block;
+            padding: 15px 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            font-size: 22px;
+            transform: rotate(-2deg);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+        }
+
         button {
-            padding: 12px 25px;
+            margin-top: 30px;
+            padding: 10px 25px;
             font-size: 18px;
-            background-color: white;
-            color: #ff4d6d;
             border: none;
             border-radius: 20px;
+            background: #ff6f91;
+            color: white;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #ffe6eb;
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            color: pink;
+            animation: fall 6s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {transform: translateY(-100px);}
+            100% {transform: translateY(100vh);}
         }
     </style>
 </head>
 <body>
 
-    <h1>Happy Birthday Sayang 🎉</h1>
-    <p>Terima kasih sudah hadir di hidupku 💖</p>
+<div class="container">
+    <h1>Happy Birthday Sayangku 🎀💖</h1>
 
-    <button onclick="showMessage()">Klik Aku</button>
+    <div class="polaroid">
+        <img src="foto.jpg" alt="Foto Kita">
+        <div class="caption">My favorite person 🤍</div>
+    </div>
 
-    <script>
-        function showMessage() {
-            alert("Aku selalu bersyukur punya kamu ❤️");
-        }
-    </script>
+    <div class="note">
+        Semoga panjang umur, sehat selalu,  
+        dan makin sayang sama aku yaaa 🥺💕  
+        Aku bersyukur banget punya kamu ✨
+    </div>
+
+    <br>
+    <button onclick="playMusic()">Putar Lagu 🎵</button>
+
+    <audio id="music" loop>
+        <source src="lagu.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<div class="hearts" id="hearts"></div>
+
+<script>
+function playMusic() {
+    document.getElementById("music").play();
+}
+
+function createHearts() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.getElementById("hearts").appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHearts, 500);
+</script>
 
 </body>
 </html>
